@@ -2,12 +2,13 @@
 
 A simple CRUD REST API using NestJS, MongoDB and Mongoose.
 
-## Installation
+## Quick Start
 
 ```bash
-git clone https://github.com/trofihero/nestjs-mongodb-crud.git
+git clone https://github.com/icaru12/nestjs-mongodb-crud.git
 cd nestjs-mongodb-crud
 npm install
+npm run start:dev
 ```
 
 ## Running the API
@@ -39,6 +40,9 @@ $ npm run test:cov
 ## Commands used to build this API
 
 ``` bash
+# Install Nest CLI globally if you don't already have it installed
+npm install -g @nestjs/cli
+
 nest new nestjs-mongodb-crud
 cd nestjs-mongodb-crud
 npm i @nestjs/mongoose mongoose
