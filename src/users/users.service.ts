@@ -9,24 +9,24 @@ import { User, UserDocument } from './schemas/user.schema';
 export class UsersService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
-  async getUsers(): Promise<User[]> {
+  async getUsers(): Promise<UserDocument[]> {
     return await this.userModel.find().exec();
   }
 
-  async getUserById(id: string): Promise<User> {
+  async getUserById(id: string): Promise<UserDocument> {
     return await this.userModel.findById(id).exec();
   }
 
-  async createUser(createUserDto: CreateUserDto): Promise<User> {
+  async createUser(createUserDto: CreateUserDto): Promise<UserDocument> {
     const newUser = new this.userModel(createUserDto);
     return newUser.save();
   }
 
-  async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User> {
+  async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<UserDocument> {
     return await this.userModel.findByIdAndUpdate(id, updateUserDto, { new: true });
   }
 
-  async deleteUser(id: string): Promise<User> {
+  async deleteUser(id: string): Promise<UserDocument> {
     return await this.userModel.findByIdAndDelete(id);
   }
 }

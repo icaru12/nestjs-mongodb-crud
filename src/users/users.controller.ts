@@ -10,7 +10,8 @@ export class UsersController {
 
   @Get()
   async getUsers() {
-    return await this.usersService.getUsers();
+    const users = await this.usersService.getUsers();
+    return users;
   }
 
   @Get(':id')
